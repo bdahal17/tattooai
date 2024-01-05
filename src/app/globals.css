@@ -25,3 +25,27 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+/* Custom scroll bar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 5px; /* Adjust the width of the scrollbar */
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  /* Color of the track */
+  background-color: rgb(23 37 84 / var(--tw-bg-opacity));
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+/* Color of the scrollbar thumb */
+  background: #7a7a7a;
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Color of the scrollbar thumb on hover */
+}
+
+.login_button {
+  height: 20px;
+  width: 20px;
+}
