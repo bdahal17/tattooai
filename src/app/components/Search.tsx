@@ -1,11 +1,11 @@
 'use client'
-import {IoIosLock, IoIosUnlock} from "react-icons/io";
-import React, {useEffect, useRef, useState} from "react";
+import React, {useContext, useEffect, useRef, useState} from "react";
+import {Context, User} from "@/app/components/context";
 
 const Search = () => {
+    const {name, age, username, login} = useContext<User>(Context);
     const elementRef = useRef<HTMLTextAreaElement>(null);
     const [textareaHeight, setTextareaHeight] = useState<number | undefined>(44);
-    const [login, setLogin] = useState(false);
 
     useEffect(() => {
     }, [])
@@ -20,7 +20,7 @@ const Search = () => {
                 <textarea ref={elementRef} placeholder={"start exploring.."} style={{height: `${textareaHeight}px`}} onChange={handleTextareaChange} className={`overflow-${(textareaHeight != null) && textareaHeight > 200 ? "y-scroll" : "hidden"} custom-scrollbar p-2 rounded-2xl bg-blue-950 text-gray-300 focus:outline-none text-lg w-full resize-none`}/>
                 <div className="w-1/4 bg-transparent text-sm flex justify-center items-center text-white">
                     <div className={"h-full flex justify-center items-center rounded-2xl bg-red-500 w-full cursor-pointer"}>
-                        <span>Explore</span>
+                        <span onClick={() => login(true)}>Explore</span>
                     </div>
                 </div>
             </div>

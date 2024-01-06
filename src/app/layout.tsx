@@ -3,7 +3,7 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import Header from "@/app/components/Header";
 import React from "react";
-
+import ContextTheme from "@/app/components/context";
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
@@ -22,7 +22,9 @@ export default function RootLayout({
       <body className='inter.className h-dvh bg-blue-300 flex justify-center flex-col'>
       {false ? <Header/> : null}
       <div className="h-full bg-amber-500 relative">
+          <ContextTheme>
               {children}
+          </ContextTheme>
       </div>
       </body>
     </html>
